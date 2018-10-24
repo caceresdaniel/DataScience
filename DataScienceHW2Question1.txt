@@ -1,0 +1,55 @@
+Question 1:
+sunny - 8
+rainy - 6
+windy - yes - 6 - sunny 2/ 4 rainy
+windy - no - 8 - sunny 6 / 2 rainy
+humidity - low - 3 - sunny 3 / 0 rainy
+humidity - high - 5 - sunny 1 / 4 rainy 
+humidity - mild - 6 - sunny 4 / 2 rainy 
+temp - high - 5 - sunny 5 / 0 rainy
+temp - mild - 5 - sunny 3 / 2 rainy
+temp - low - 4 - sunny 0 / 4 rainy
+
+probability of sunny - 8/14
+probability of rainy - 6/14
+
+H(X) = -((8/14)log2(8/14)+(6/14)log2(6/14)) = .99
+
+Wind 
+windy
+H(X) = -((2/6)log2(2/6)+(4/6)log2(4/6)) = .92
+not windy
+H(x) = -((6/8)log2(6/8)+(2/8)log2(2/8)) = .81
+
+E(H(X)) = ((6/14)*.92 + (8/14)*.81) = .86
+
+Humidity 
+low 
+H(X) = -((1)log2(1)+(0)log2(0)) = 0
+high
+H(X) = -((1/5)log2(1/5)+(4/5)log2(4/5)) = .72
+mild
+H(X) = -((4/6)log2(4/6)+(2/6)log2(2/6)) = .92
+
+E(H(X)) = ((3/14)*0 + (5/14)*.72+ (6/14)*.92) = .65
+
+Temp
+high
+H(X) = -((1)log2(1)+(0)log2(0)) = 0
+mild
+H(X) = -((3/5)log2(3/5)+(2/5)log2(2/5)) = .97
+low 
+H(X) = -((0)log2(0)+(1)log2(1)) = 0
+
+E(H(X)) = ((5/14)*0 + (5/14)*.97 + (4/14)*0) = .35
+
+Wind 
+information gain - .99 -.86 = .13
+
+Humidity 
+information gain - .99 - .65 = .34 
+
+Temp
+information gain - .99 - .35 = .64
+
+The best feature to put on the top of the tree is Temperature
